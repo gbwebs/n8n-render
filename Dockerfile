@@ -8,4 +8,7 @@ RUN apk add --no-cache ffmpeg
 USER node
 
 EXPOSE 5678
-CMD ["n8n", "start"]
+
+# Call the binary directly (works in Alpine builds)
+ENTRYPOINT ["tini", "--"]
+CMD ["node", "/usr/local/lib/node_modules/n8n/bin/n8n"]
