@@ -7,7 +7,7 @@ RUN apk add --no-cache ffmpeg
 
 USER node
 
-EXPOSE 5679
+EXPOSE 5678
 
 # Use full path to n8n binary
 CMD ["/usr/local/bin/n8n", "start"]
